@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "name": "YourPlatform",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "C:/MinGW/lib/gcc/<version>/include/c++",        // Windows example
+        "C:/MinGW/include",                              // standard headers
+        "/usr/include",                                  // Linux/mac default paths
+        "/usr/local/include"
+      ],
+      "compilerPath": "C:/MinGW/bin/g++.exe",           // or /usr/bin/g++ on Linux/mac
+      "intelliSenseMode": "gcc-x64"                     // or msvc-x64, clang-x64
+    }
+  ],
+  "version": 4
+}
