@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+// Function to check if a number is prime
+int isPrime(int num) {
+    if (num < 2) return 0;
+    for (int i = 2; i <= sqrt(num); i++) {
+        if (num % i == 0) return 0;
+    }
+    return 1;
+}
+
+int main() {
+    int n;
+
+    printf("Enter N: ");
+    scanf("%d", &n);
+
+    int *arr = (int *)malloc(n * sizeof(int)); // dynamic allocation
+
+    for (int i = 0; i < n; i++) {
+        printf("Enter value[%d]: ", i);
+        scanf("%d", &arr[i]);
+    }
+
+    // Print Index
+    printf("Index:  ");
+    for (int i = 0; i < n; i++) {
+        printf("%2d ", i);
+    }
+    printf("\n");
+
+    // Print Array with primes and '#' for non-primes
+    printf("Array:  ");
+    for (int i = 0; i < n; i++) {
+        if (isPrime(arr[i]))
+            printf("%2d ", arr[i]);
+        else
+            printf("%2s ", "#");
+    }
+    printf("\n");
+
+    free(arr); // Free allocated memory
+    return 0;
+}

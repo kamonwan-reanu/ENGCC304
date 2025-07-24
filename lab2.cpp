@@ -30,6 +30,7 @@ void giveChange(int change) {
 }
 
 int main(){
+<<<<<<< HEAD
     Item items[NUM_ITEMS] = {
         {"โค้ก",10,10},
         {"น้ำเขียว",12,10},
@@ -77,6 +78,31 @@ int main(){
         }
         else {
             printf("คำสั่งไม่ถูกต้อง\n");
+=======
+    cout << "*** เครื่องขายน้ำอัตโนมัติ ***\n";
+    while(true) {
+        cout << "\nใส่เหรียญหรือธนบัตร (1,5,10,20,50,100) หรือ 0 เพื่อยกเลิก\n> ";
+        int coin;
+        cin >> coin;
+        if (coin == 0) {
+            if (balance > 0) {
+                auto ret = make_change(balance);
+                cout << "คืนเงินเต็มจำนวน:\n";
+                for (auto &c : ret)
+                    if (c.second > 0)
+                        cout << c.first << " บาท x " << c.second << "\n";
+                balance = 0;
+            }
+            continue;
+        }
+        insert_coin(coin);
+
+        cout << "ต้องการซื้อสินค้าหรือไม่? พิมพ์ 'y' เพื่อเลือก , อื่นๆ เพื่อใส่เงินต่อ\n> ";
+        char cmd;
+        cin >> cmd;
+        if (cmd == 'y' || cmd == 'Y') {
+            select_product();
+>>>>>>> a6e8563 (adsf)
         }
     }
 
