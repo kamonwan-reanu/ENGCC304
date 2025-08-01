@@ -3,25 +3,23 @@
 int main() {
     int N;
 
-    // รับค่าจำนวนเต็มจากผู้ใช้
-    printf("กรุณาใส่ตัวเลข N: ");
-    scanf("%d", &N);
+    printf("Enter value:\n");
 
-    // ตรวจสอบว่า N เป็นเลขคี่หรือเลขคู่
-    if (N % 2 != 0) {
-        // หากเป็นเลขคี่: แสดงลำดับ 1 ถึง N เฉพาะเลขคี่
-        printf("ลำดับเลขคี่จาก 1 ถึง %d:\n", N);
-        for (int i = 1; i <= N; i += 2) {
-            printf("%d ", i);
-        }
-        printf("\n");
-    } else {
-        // หากเป็นเลขคู่: แสดงลำดับ N ถึง 0 เฉพาะเลขคู่
-        printf("ลำดับเลขคู่จาก %d ถึง 0:\n", N);
-        for (int i = N; i >= 0; i -= 2) {
-            printf("%d ", i);
-        }
-        printf("\n");
+    if (scanf("%d", &N) == 1) {
+
+            printf("Series: ");
+            if (N % 2 == 1) {
+                for (int i = 1; i <= N; i += 2) {
+                    printf("%d ", i);
+                }
+            } else {
+                for (int i = N; i >= 0; i -= 2) {
+                    printf("%d ", i);
+                }
+            }
+        } 
+        else {
+            printf("NO!");
     }
 
     return 0;
